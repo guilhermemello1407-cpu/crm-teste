@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Básico - Gestão de Clientes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📊 CRM Básico</h1>
+      <p>Sistema de Gestão de Clientes e Interações</p>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="clientes">Clientes</button>
+      <button class="tab-btn" data-tab="interacoes">Interações</button>
+    </nav>
+
+    <!-- ABA CLIENTES -->
+    <div id="clientes" class="tab-content active">
+      <div class="form-section">
+        <h2>Novo Cliente</h2>
+        <form id="formCliente">
+          <input type="text" id="nome" placeholder="Nome" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="tel" id="telefone" placeholder="Telefone">
+          <input type="text" id="empresa" placeholder="Empresa">
+          <button type="submit" class="btn-primary">Adicionar Cliente</button>
+        </form>
+      </div>
+
+      <div class="list-section">
+        <h2>Lista de Clientes</h2>
+        <div id="listaClientes" class="clients-grid">
+          <!-- Preenchido por JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ABA INTERAÇÕES -->
+    <div id="interacoes" class="tab-content">
+      <div class="form-section">
+        <h2>Nova Interação</h2>
+        <form id="formInteracao">
+          <select id="clienteSelect" required>
+            <option value="">Selecione um cliente...</option>
+          </select>
+          <select id="tipoInteracao" required>
+            <option value="">Tipo de interação</option>
+            <option value="Email">Email</option>
+            <option value="Chamada">Chamada</option>
+            <option value="Reunião">Reunião</option>
+            <option value="Mensagem">Mensagem</option>
+          </select>
+          <textarea id="descricaoInteracao" placeholder="Descrição da interação" required></textarea>
+          <button type="submit" class="btn-primary">Registrar Interação</button>
+        </form>
+      </div>
+
+      <div class="list-section">
+        <h2>Histórico de Interações</h2>
+        <div id="listaInteracoes" class="interactions-list">
+          <!-- Preenchido por JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para editar cliente -->
+  <div id="modalEditar" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Editar Cliente</h2>
+      <form id="formEditar">
+        <input type="hidden" id="editarId">
+        <input type="text" id="editarNome" placeholder="Nome" required>
+        <input type="email" id="editarEmail" placeholder="Email" required>
+        <input type="tel" id="editarTelefone" placeholder="Telefone">
+        <input type="text" id="editarEmpresa" placeholder="Empresa">
+        <select id="editarStatus">
+          <option value="Ativo">Ativo</option>
+          <option value="Inativo">Inativo</option>
+          <option value="Potencial">Potencial</option>
+        </select>
+        <button type="submit" class="btn-primary">Salvar Alterações</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
