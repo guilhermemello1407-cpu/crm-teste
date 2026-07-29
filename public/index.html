@@ -7,10 +7,50 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
+  <!-- Tela de Login -->
+  <div id="telalogin" class="login-container">
+    <div class="login-box">
       <h1>📊 CRM Básico</h1>
-      <p>Sistema de Gestão de Clientes e Interações</p>
+      <p>Sistema de Gestão de Clientes</p>
+
+      <ul class="login-tabs">
+        <li><button class="login-tab-btn active" data-tab="login-form">Login</button></li>
+        <li><button class="login-tab-btn" data-tab="registro-form">Registrar</button></li>
+      </ul>
+
+      <!-- Formulário de Login -->
+      <form id="formLogin" class="login-form active">
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="password" id="loginSenha" placeholder="Senha" required>
+        <button type="submit" class="btn-primary">Entrar</button>
+        <p class="login-error" id="loginError"></p>
+      </form>
+
+      <!-- Formulário de Registro -->
+      <form id="formRegistro" class="login-form">
+        <input type="text" id="registroNome" placeholder="Nome" required>
+        <input type="email" id="registroEmail" placeholder="Email" required>
+        <input type="password" id="registroSenha" placeholder="Senha (mín. 6 caracteres)" required>
+        <input type="password" id="registroSenhaConfirm" placeholder="Confirmar Senha" required>
+        <button type="submit" class="btn-primary">Criar Conta</button>
+        <p class="login-error" id="registroError"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Sistema Principal (Oculto até login) -->
+  <div id="sistemaPrincipal" class="container" style="display: none;">
+    <header>
+      <div class="header-content">
+        <div>
+          <h1>📊 CRM Básico</h1>
+          <p>Sistema de Gestão de Clientes e Interações</p>
+        </div>
+        <div class="header-user">
+          <span id="usuarioNome"></span>
+          <button id="btnLogout" class="btn-logout">Sair</button>
+        </div>
+      </div>
     </header>
 
     <nav class="tabs">
@@ -66,26 +106,26 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Modal para editar cliente -->
-  <div id="modalEditar" class="modal hidden">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Editar Cliente</h2>
-      <form id="formEditar">
-        <input type="hidden" id="editarId">
-        <input type="text" id="editarNome" placeholder="Nome" required>
-        <input type="email" id="editarEmail" placeholder="Email" required>
-        <input type="tel" id="editarTelefone" placeholder="Telefone">
-        <input type="text" id="editarEmpresa" placeholder="Empresa">
-        <select id="editarStatus">
-          <option value="Ativo">Ativo</option>
-          <option value="Inativo">Inativo</option>
-          <option value="Potencial">Potencial</option>
-        </select>
-        <button type="submit" class="btn-primary">Salvar Alterações</button>
-      </form>
+    <!-- Modal para editar cliente -->
+    <div id="modalEditar" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Editar Cliente</h2>
+        <form id="formEditar">
+          <input type="hidden" id="editarId">
+          <input type="text" id="editarNome" placeholder="Nome" required>
+          <input type="email" id="editarEmail" placeholder="Email" required>
+          <input type="tel" id="editarTelefone" placeholder="Telefone">
+          <input type="text" id="editarEmpresa" placeholder="Empresa">
+          <select id="editarStatus">
+            <option value="Ativo">Ativo</option>
+            <option value="Inativo">Inativo</option>
+            <option value="Potencial">Potencial</option>
+          </select>
+          <button type="submit" class="btn-primary">Salvar Alterações</button>
+        </form>
+      </div>
     </div>
   </div>
 

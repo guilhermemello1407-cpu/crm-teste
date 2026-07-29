@@ -11,6 +11,132 @@ body {
   padding: 20px;
 }
 
+/* ===== TELA DE LOGIN ===== */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-box {
+  background: white;
+  border-radius: 10px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-box h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.login-box p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 0.95em;
+}
+
+.login-tabs {
+  display: flex;
+  list-style: none;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 30px;
+  gap: 0;
+}
+
+.login-tabs li {
+  flex: 1;
+}
+
+.login-tab-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: none;
+  color: #666;
+  font-size: 1em;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+}
+
+.login-tab-btn.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
+
+.login-form {
+  display: none;
+  animation: fadeIn 0.3s;
+}
+
+.login-form.active {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.login-error {
+  color: #dc3545;
+  font-size: 0.9em;
+  margin-top: 10px;
+  min-height: 20px;
+}
+
+/* ===== HEADER COM LOGOUT ===== */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-user span {
+  color: white;
+  font-size: 0.95em;
+}
+
+.btn-logout {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: all 0.3s;
+}
+
+.btn-logout:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
